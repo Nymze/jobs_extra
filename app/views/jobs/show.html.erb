@@ -1,0 +1,18 @@
+
+<div class="container">
+	<div class="row">
+		<ul>
+			<ol><h1><%= @job.title %></h1></ol>
+			<ol><p><%= @job.description%></p></ol>
+			<ol><p> Experience :</p><h4><%= @job.experience %></h4></ol>
+			<ol><%= @job.date %></ol> </br>
+			<ol><%= link_to "home", root_path %></ol>
+			<ol><%= link_to "Edit", edit_job_path(@job) %></ol>
+			<ol><%= link_to "Delete", job_path(@job), method: :delete, data: {confirm: "sure ?"} %></ol>
+		</ul>
+
+		
+	</div>
+</div>
+
+
