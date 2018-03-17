@@ -3,6 +3,7 @@
 <%= f.input :title, label: "Titre" %>
 <%= f.input :description, label: "description" %>
 <%= f.input :experience, label: "experience" %>
+<%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Selectionner une categorie"} %>
 <%= f.input :date, label: "date" %>
 
 <%= f.button :submit %>
