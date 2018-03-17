@@ -21,7 +21,7 @@
 	<h4><%= link_to "Voir l'offre", job %> </h4>
 	<br>
 	
-	Offre proposée par :
+	Offre proposée par : <%= job.userpro %>
 	<br>
 
 	<% if !current_user.jobs.include?(job) %>

@@ -5,7 +5,7 @@
 
 		  		<div>
 		 			<ul class="nav navbar-nav" style="margin-left:20%"> 
-		  				<li> <%= link_to "Toutes les offres", root_path %></li>
+		  				<li> <%= link_to "Toutes les offres", user_dashboard_path %></li>
 		  					<% Category.all.each do |category| %>
 		  				<li><%= link_to category.name, jobs_path(category: category.name) %></li>
 		  				<% end %>
