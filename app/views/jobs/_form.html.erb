@@ -1,12 +1,27 @@
+
+
+<div class="container">
+	<div class="row">
+		<div class="w3-col m5 w3-container">
+
+
 <%= simple_form_for @job do |f| %>
 
-<%= f.input :title, label: "Titre" %>
-<%= f.input :description, label: "description" %>
-<%= f.input :experience, label: "experience" %>
-<%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Selectionner une categorie"} %>
-<%= f.input :date, label: "date" %>
+<%= f.input :title, label: "Titre", input_html: { class: "w3-input w3-border" } %>
+<%= f.input :description, label: "description", input_html: { class: "w3-input w3-border" } %>
+<%= f.input :experience, label: "experience", input_html: { class: "w3-input w3-border" } %>
+<%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Selectionner une categorie"}, input_html: { class: "w3-input w3-border" } %>
+<%= f.input :date, label: "date", input_html: { class: "w3-input w3-border" } %>
 <%= f.hidden_field :userpro_id, :value => current_userpro.id %>
 
-<%= f.button :submit %>
+<%= f.button :submit, class: "w3-button w3-black w3-right w3-section" %>
 <% end %>
+
+
+
+
+		</div>
+	</div>
+</div>	
+
 

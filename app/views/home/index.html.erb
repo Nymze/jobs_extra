@@ -6,8 +6,18 @@
 
   			<% elsif userpro_signed_in? %>
 
+      <div class="container">
+        <div class="row">
+         
+
         <h1> Bienvenue Sur votre dashbord Professionel</h1>
-        <%= link_to "Voir vos offres", userpro_dashboard_path %>
+
+
+        <div> <h4><%= link_to "Voir vos offres", userpro_dashboard_path %></h4> </div>
+
+          
+        </div>
+      </div>
 
   			 <% else %>
 
@@ -269,7 +279,7 @@ function toggleFunction() {
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
+
 
 
 <% end %>

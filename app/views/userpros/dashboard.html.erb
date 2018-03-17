@@ -1,41 +1,111 @@
-<% if userpro_signed_in? %>
+<style>
 
-	<ul>
-		<li><%= link_to 'poster une offre', new_job_path, :class => 'navbar-link' %> |</li>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
 
-		<li>Vos missions en cours: <%=current_userpro.jobs.count %></li>
-
-
-	</ul>
-
-
-
-<% current_userpro.jobs.each do |job| %> 
-
-	<b><%= job.title %></b>
-	<br>
-	<br>
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
 	
-	<%= job.description %>
-	<br>
-	<br>
+.joblabel{
+   
+}
 
-	<% if !job.users.empty? %>
-		<div>	
-			Les extras suivants on postulé :
-				<ul>
-					<li>
-						<% job.users.each do |user| %>
-							<%=  user.email %>
-						<% end %>
-					</li>
-				</ul>	
-		</div>
-	<% else %>
-		Aucun extra n'a postulé pour le moment.
-	<% end %>
-		<br>
-		<br>	
+.bordlabel{
+	font-family: 'Open Sans Condensed', arial, sans;
+    width: 500px;
+    padding: 30px;
+    background: #FFFFFF;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
 
-<% end %>
-<% end %>
+
+}
+
+.poster{
+
+	  align-self:center;
+      background:transparent;
+      padding:1rem 1rem;
+      margin:0 1rem;
+      transition:all .5s ease;
+      color:#41403E;
+      font-size:2rem;
+      letter-spacing:1px;
+      outline:none;
+      box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      border:solid 2px #41403E;
+      text-decoration: none;
+
+}
+
+.counterr{
+
+	 align-self:center;
+      background:transparent;
+      padding:1rem 1rem;
+      margin:0 1rem;
+      transition:all .5s ease;
+      color:#41403E;
+      font-size:2rem;
+      letter-spacing:1px;
+      outline:none;
+      text-decoration:none; 
+
+}
+
+
+</style>
+
+<div class="container">
+
+	<div class="row">
+	
+					<% if userpro_signed_in? %>
+
+
+
+						<ul>
+							<ol><h3><%= link_to "Poster une offre", new_job_path, :class => 'poster' %> </h3></ol>
+							<ol><h4 class="counterr">Vos missions en cours: <%=current_userpro.jobs.count %></h4></ol>
+							
+						</ul>
+
+<div class="joblabel">
+					<div class="w3-content w3-container w3-padding-64" id="about">
+						
+						<% current_userpro.jobs.each do |job| %>
+						<div class="bordlabel">
+							<h4><%= job.title %></h4>
+							<p><%= job.description %></p>
+
+							<% if !job.users.empty? %>
+								<div>	
+									<h4>Les extras suivants on postulé :</h4>
+										<ul>
+											<li>
+												<% job.users.each do |user| %>
+													<%=  user.email %>
+												<% end %>
+											</li>
+										</ul>	
+								</div>
+							<% else %>
+								<h4>Aucun extra n'a postulé pour le moment.</h4>
+							<% end %>
+						</div> 
+							
+					<% end %>
+					<% end %>
+
+
+						
+					</div>
+	</div>
+</div>
