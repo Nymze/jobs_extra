@@ -1,0 +1,41 @@
+
+<%= render 'jobs/categories'%>
+
+<div class="container">
+	<div class="row">
+
+	<% @jobs.each do |job| %>
+
+	<b><%= job.title %></b>
+	<br>
+	
+	<%= job.description %>
+	<br>
+
+	Experience requise : <%= job.experience %> ans
+	<br>
+
+	Pour le : <%= job.date %> 
+	<br>
+
+	<h4><%= link_to "Voir l'offre", job %> </h4>
+	<br>
+	
+	Offre proposée par :
+	<br>
+
+	<% if !current_user.jobs.include?(job) %>
+		<%= link_to "postuler", apply_for_job_path(job_id: job.id) %> 
+	<% else %>
+		<b> Vous avez postulé :) </b>
+		<br>
+		<%= link_to "annuler", cancel_job_candidacy_path(job_id: job.id) %> 
+	<% end %>
+	<br>
+	<br>
+
+<% end %>
+
+</div>
+
+</div>

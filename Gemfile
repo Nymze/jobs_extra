@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'simple_form', '~> 3.5', '>= 3.5.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'devise'
 
 
 group :development, :test do

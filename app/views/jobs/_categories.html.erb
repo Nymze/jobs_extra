@@ -1,0 +1,18 @@
+ 
+	<nav class="navbar navbar-default"> 
+  		<div class="container">
+  			<div class="navbar-brand"> <%= link_to "Categories", root_path %></div>
+
+		  		<div>
+		 			<ul class="nav navbar-nav" style="margin-left:20%"> 
+		  				<li> <%= link_to "Toutes les offres", root_path %></li>
+		  					<% Category.all.each do |category| %>
+		  				<li><%= link_to category.name, jobs_path(category: category.name) %></li>
+		  				<% end %>
+
+
+		  			</ul>	
+		  		</div>	
+			</div>
+		</div>
+	</nav>
