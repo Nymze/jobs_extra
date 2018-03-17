@@ -1,0 +1,41 @@
+<% if userpro_signed_in? %>
+
+	<ul>
+		<li><%= link_to 'poster une offre', new_job_path, :class => 'navbar-link' %> |</li>
+
+		<li>Vos missions en cours: <%=current_userpro.jobs.count %></li>
+
+
+	</ul>
+
+
+
+<% current_userpro.jobs.each do |job| %> 
+
+	<b><%= job.title %></b>
+	<br>
+	<br>
+	
+	<%= job.description %>
+	<br>
+	<br>
+
+	<% if !job.users.empty? %>
+		<div>	
+			Les extras suivants on postulé :
+				<ul>
+					<li>
+						<% job.users.each do |user| %>
+							<%=  user.email %>
+						<% end %>
+					</li>
+				</ul>	
+		</div>
+	<% else %>
+		Aucun extra n'a postulé pour le moment.
+	<% end %>
+		<br>
+		<br>	
+
+<% end %>
+<% end %>

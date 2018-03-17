@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="jumbotron">
+
+  			<% if user_signed_in? %>
+
+  			<h1> Bienvenue Sur votre dashbord user</h1>
+  			<%= link_to "Voir les dernieres offres", user_dashboard_path %>
+
+  			<% elsif userpro_signed_in? %>
+
+        <h1> Bienvenue Sur votre dashbord Professionel</h1>
+        <%= link_to "Voir vos offres", userpro_dashboard_path %>
+
+  			 <% else %>
+  	
+            <h1><%= link_to "EXTRA", new_user_session_path %></h1>
+		 
+
+			<h1><%= link_to "RESTAURATEUR", new_userpro_session_path %></h1>   
+
+ 			<% end %>
+
+
+
+    
+  
+  </div>
+
+
+
+
+       
+
+       

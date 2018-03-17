@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
-  get 'users/dashboard'
-
-  devise_for :users
+  
   resources :jobs
+ 
 
-  root 'jobs#index'
+
+  root 'home#index'
+
+  get 'users/dashboard'
+  get 'userpros/dashboard'
+  get 'jobs/index'
+
+
+    devise_for :userpros
+    devise_for :users
+
+
 
 
    # TABLEAUX DE BORD
   get '/tableau-de-bord-extra', to: 'users#dashboard', as: :user_dashboard
+  get '/tableau-de-bord-restaurateur', to: 'userpros#dashboard', as: :userpro_dashboard
 
   # CANDIDATURES
   get '/postuler', to: 'users#apply_for_job', as: :apply_for_job

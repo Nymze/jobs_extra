@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
 	before_action :find_job, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!
+	
 
 	def index
 		if params[:category].blank?
@@ -49,7 +49,7 @@ class JobsController < ApplicationController
 	private
 
 	def jobs_params
-		params.require(:job).permit(:title, :description, :experience, :date, :category_id)
+		params.require(:job).permit(:title, :description, :experience, :date, :category_id, :userpro_id)
 	end
 
 	def find_job

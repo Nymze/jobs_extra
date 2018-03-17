@@ -5,6 +5,7 @@
 <%= f.input :experience, label: "experience" %>
 <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Selectionner une categorie"} %>
 <%= f.input :date, label: "date" %>
+<%= f.hidden_field :userpro_id, :value => current_userpro.id %>
 
 <%= f.button :submit %>
 <% end %>
