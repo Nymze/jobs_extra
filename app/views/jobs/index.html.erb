@@ -1,5 +1,48 @@
-<div class="container">
-	<div class="row">
+<style>
+	
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+	
+.joblabel{
+   
+}
+
+.bordlabel{
+	font-family: 'Open Sans Condensed', arial, sans;
+    width: 800px;
+    padding: 30px;
+    background: #FFFFFF;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+    
+
+}
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
 			<h1>Liste des Offres</h1>
 
 </br>	
@@ -9,23 +52,39 @@
 
 
 
-
-			<%= link_to "poster une offre", new_job_path %>
+<div class="container">
+	
+			
 </br>
 </br>
+				
+							<%= @jobs.each do |job| %>
+						
+          <div class="bordlabel">
+							<h2> <%= job.title %> </h2> 
+							<p>  <%= job.category %> </p>   
+							<p>  <%= job.description %> </p>
+							<h5> Experience requise : <%= job.experience %></h5>
+							<h5> Pour le : <%= job.date %>  </h5> 
 
-			<%= @jobs.each do |job| %>
-			<h2> <%= job.title %> </h2> 
-			<p>  <%= job.category %> </p>   
-			<p>  <%= job.description %> </p>
-			<h5> Experience requise : <%= job.experience %></h5>
-			<h5> Pour le : <%= job.date %>  </h5> 
-			<h4><%= link_to "Voir l'offre", job %> </h4>
+						
+              
 
-		
-			<% end %>
-		
-	</div>
+							<h4><%= link_to "Voir l'offre", job %> </h4>
+
+              <% if !current_user.jobs.include?(job) %>
+                      <%= link_to "postuler", apply_for_job_path(job_id: job.id) %> 
+                    <% else %>
+                      <b> Vous avez postulé :) </b>
+                      <br>
+                      <%= link_to "annuler", cancel_job_candidacy_path(job_id: job.id) %> 
+                    <% end %>
+
+          </div>  
+							<% end %>
+						
+					
+	
 </div>
 
 
