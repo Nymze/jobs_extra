@@ -58,7 +58,7 @@ body {
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a><%= link_to 'Dashboard', userpro_dashboard_path %></a>
       <a ><%= link_to 'Edit profile', edit_userpro_registration_path %></a>
-      <a ><%= link_to "Logout", destroy_userpro_session_path %></a>
+      <a ><%= link_to "Logout", destroy_userpro_session_path, method: :delete %></a>
       
 
 
