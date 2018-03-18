@@ -1,35 +1,83 @@
-<nav class="navbar"> 
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-      </a>
+
+    <style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+  <div id="mySidenav" class="sidenav">
       <% if user_signed_in? %>
-    
-     <div class="w3-bar-item w3-button"> <%= link_to "Nice extra", user_dashboard_path %></div>
-   
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => "w3-bar-item w3-button w3-hide-small" %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "w3-bar-item w3-button w3-hide-small"  %>
-    
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
+
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a><%= link_to 'Dashboard', user_dashboard_path %></a>
+      <a><%= link_to 'Edit profile', edit_user_registration_path %></a>
+      <a><%= link_to "Logout", destroy_user_session_path, method: :delete  %></a>
+      
+
+      <% elsif userpro_signed_in? %>
+
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a><%= link_to 'Dashboard', userpro_dashboard_path %></a>
+      <a ><%= link_to 'Edit profile', edit_userpro_registration_path %></a>
+      <a ><%= link_to "Logout", destroy_userpro_session_path %></a>
+      
 
 
-    <% elsif userpro_signed_in? %>
 
-     <div class="w3-bar-item w3-button"> <%= link_to "Nice extra", user_dashboard_path %></div>
-    
-    <%= link_to 'Edit profile', edit_userpro_registration_path, :class => "w3-bar-item w3-button w3-hide-small" %>
-    <%= link_to "Logout", destroy_userpro_session_path, method: :delete, :class => "w3-bar-item w3-button w3-hide-small"  %>
-    
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
-
-
-     <% end %>
-  </div>
+  <% end %>
 
 </div>
-</nav>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open </span>
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
