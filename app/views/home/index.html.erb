@@ -64,14 +64,21 @@ body, html {
      
          
 
-        <h1> Bienvenue Sur votre dashbord Professionel</h1>
+         <div class="container" style="height:100%; width: 100%;">
+        
 
-
-        <div> <h4><%= link_to "Voir vos offres", userpro_dashboard_path %></h4> </div>
-
+         <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+          <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+          <span class="w3-hide-small"><%= link_to "Voir vos offres", userpro_dashboard_path %></span></span>
+         
           
         </div>
       </div>
+ </div>
+
+
+      
 
   			 <% else %>
 
