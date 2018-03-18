@@ -7,7 +7,7 @@
       <% if user_signed_in? %>
     
      <div class="w3-bar-item w3-button"> <%= link_to "Nice extra", user_dashboard_path %></div>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+   
     <%= link_to 'Edit profile', edit_user_registration_path, :class => "w3-bar-item w3-button w3-hide-small" %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "w3-bar-item w3-button w3-hide-small"  %>
     
@@ -19,7 +19,7 @@
     <% elsif userpro_signed_in? %>
 
      <div class="w3-bar-item w3-button"> <%= link_to "Nice extra", user_dashboard_path %></div>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    
     <%= link_to 'Edit profile', edit_userpro_registration_path, :class => "w3-bar-item w3-button w3-hide-small" %>
     <%= link_to "Logout", destroy_userpro_session_path, method: :delete, :class => "w3-bar-item w3-button w3-hide-small"  %>
     
