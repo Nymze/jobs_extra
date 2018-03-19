@@ -1,4 +1,4 @@
-### Features à ajouter:###
+## Features à ajouter:
 
 **MARDI**<br/>
   - Une mission n'est plus disponible une fois la date de début passée<br/>
@@ -15,7 +15,7 @@ Un peu de Css
   
   ---
   
-  **BONUS:**
+**BONUS:**
   - Userpro: fixe le nombre d'Extra requis pour sa mission
   - Quand mission a son nombre d'extras atteint: mission n'est plus disponible dans l'index
   
