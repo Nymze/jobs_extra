@@ -1,24 +1,22 @@
-# README
+**Features à ajouter:**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MARDI<br/>
+  - Une mission n'est plus disponible une fois la date de début passée<br/>
+  
+MARDI - MERCREDI<br/>
+  - Userpro: Peut accepter / refuser une candidature<br/>
+  
+JEUDI - VENDREDI<br/>
+  - Envoyer un mail/sms au PRO quand nouvelle candidature
+  - Envoyer un mail/sms à l'Extra quand candidature acceptée
+  <br/>
+TOUS LES JOURS:
+Un peu de Css
+  
+  ---
+  
+  BONUS:
+  - Userpro: fixe le nombre d'Extra requis pour sa mission
+  - Quand mission a son nombre d'extras atteint: mission n'est plus disponible dans l'index
+  
+  
