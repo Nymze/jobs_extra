@@ -4,5 +4,6 @@ module Extra
     def dashboard
     	@jobs = Job.all
     end
+
   end
 end

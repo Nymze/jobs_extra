@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
 
    def after_sign_in_path_for(devise_for)
   if devise_for.is_a?(User)
-    user_dashboard_path 
+     extra_user_dashboard_path
   elsif devise_for.is_a?(Userpro)
-    userpro_dashboard_path 
+     pro_userpro_dashboard_path
   else 
   	root_path
   end

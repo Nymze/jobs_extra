@@ -99,7 +99,7 @@ body, html {
 						<br>
 
 						<% if !current_user.jobs.include?(job) %>
-							<%= link_to "postuler", apply_for_job_path(job_id: job.id) %> 
+							<%= link_to "postuler", apply_for_job_path(job_id: job.id), method: :post %> 
 						<% else %>
 							<b> Vous avez postulé :) </b>
 							<br>

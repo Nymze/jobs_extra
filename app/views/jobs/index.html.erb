@@ -48,7 +48,7 @@ body, html {
 </br>
 </br>
 				
-							<%= @jobs.each do |job| %>
+							<% @jobs.each do |job| %>
 						
           <div class="bordlabel">
 							<h2> <%= job.title %> </h2> 
@@ -62,8 +62,8 @@ body, html {
 
 							<h4><%= link_to "Voir l'offre", job %> </h4>
 
-              <% if !current_user.jobs.include?(job) %>
-                      <%= link_to "postuler", apply_for_job_path(job_id: job.id) %> 
+              <% if !job.has_candidate?(current_user) %>
+                      <%= link_to "postuler", apply_for_job_path(job_id: job.id), method: :post %> 
                     <% else %>
                       <b> Vous avez postulé :) </b>
                       <br>
