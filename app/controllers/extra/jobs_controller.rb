@@ -25,7 +25,8 @@ module Extra
     end
       
     def cancel_candidacy
-      @job.destroy
+      success, result = Services::Extra::Cancel_candidacy.new(current_user, @job).call
+      
       redirect_to extra_user_dashboard_path
     end
 

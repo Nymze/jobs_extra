@@ -1,6 +1,6 @@
 module Services
   module Extra
-    class Apply
+    class Cancel_candidacy
 
       def initialize(user, job)
         @user = user
@@ -8,7 +8,7 @@ module Services
       end
 
       def call
-        user.jobs << job
+        user.jobs.destroy(job)
 
         [true, {}]
       end
