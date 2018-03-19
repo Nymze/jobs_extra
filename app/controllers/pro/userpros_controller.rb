@@ -1,7 +1,7 @@
 module Pro
-	class UserprosController < BaseController
+  class UserprosController < BaseController
 
-	  def dashboard
-	  end
-	end
+    def dashboard
+    end
+  end
 end

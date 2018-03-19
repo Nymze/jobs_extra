@@ -1,22 +1,22 @@
 module Services
-	module Extra
-		class Apply
+  module Extra
+    class Apply
 
-			def initialize(user, job)
+      def initialize(user, job)
         @user = user
         @job  = job
-			end
+      end
 
-			def call
-	    	 user.jobs << job
+      def call
+        user.jobs.destroy job
 
-	    	 [true, {}]
-			end
+        [true, {}]
+      end
 
-			private
+      private
 
       attr_reader :user, :job
 
-		end
-	end
+    end
+  end
 end

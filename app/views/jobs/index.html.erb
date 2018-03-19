@@ -1,5 +1,5 @@
 <style>
-	
+  
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -10,13 +10,13 @@ body, html {
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-	
+  
 .joblabel{
    
 }
 
 .bordlabel{
-	font-family: 'Open Sans Condensed', arial, sans;
+  font-family: 'Open Sans Condensed', arial, sans;
     width: 800px;
     padding: 30px;
     background: #FFFFFF;
@@ -36,31 +36,31 @@ body, html {
 
 </style>
 
-				
+        
 <%= render 'jobs/categories'%>
 
 
 
 
 <div class="container">
-	
-			
+  
+      
 </br>
 </br>
-				
-							<% @jobs.each do |job| %>
-						
+        
+              <% @jobs.each do |job| %>
+            
           <div class="bordlabel">
-							<h2> <%= job.title %> </h2> 
-							<p>  <%= job.category %> </p>   
-							<p>  <%= job.description %> </p>
-							<h5> Experience requise : <%= job.experience %></h5>
-							<h5> Pour le : <%= job.date %>  </h5> 
+              <h2> <%= job.title %> </h2> 
+              <p>  <%= job.category %> </p>   
+              <p>  <%= job.description %> </p>
+              <h5> Experience requise : <%= job.experience %></h5>
+              <h5> Pour le : <%= job.date %>  </h5> 
 
-						
+            
               
 
-							<h4><%= link_to "Voir l'offre", job %> </h4>
+              <h4><%= link_to "Voir l'offre", job %> </h4>
 
               <% if !job.has_candidate?(current_user) %>
                       <%= link_to "postuler", apply_for_job_path(job_id: job.id), method: :post %> 
@@ -71,10 +71,10 @@ body, html {
                     <% end %>
 
           </div>  
-							<% end %>
-						
-					
-	
+              <% end %>
+            
+          
+  
 </div>
 
 

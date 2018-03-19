@@ -1,7 +1,7 @@
 module Extra
-	class BaseController < ApplicationController
+  class BaseController < ApplicationController
 
-		before_action :authenticate_user!
+    before_action :authenticate_user!
 
-	end
+  end
 end

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   elsif devise_for.is_a?(Userpro)
      pro_userpro_dashboard_path
   else 
-  	root_path
+    root_path
   end
 end
 

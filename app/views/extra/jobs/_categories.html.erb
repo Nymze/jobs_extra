@@ -50,19 +50,19 @@
 
 
 
-  		<div class="container">
-  			
+      <div class="container">
+        
 
-		  		<div>
-		 			<ul class="topcategories" style="margin-left:20%"> 
-		  				<li class="liactive"> <%= link_to "Toutes les offres",  extra_user_dashboard_path %></li>
-		  					<% Category.all.each do |category| %>
-		  				<li class="liactive"><%= link_to category.name, jobs_path(category: category.name) %></li>
-		  				<% end %>
+          <div>
+           <ul class="topcategories" style="margin-left:20%"> 
+              <li class="liactive"> <%= link_to "Toutes les offres",  extra_user_dashboard_path %></li>
+                <% Category.all.each do |category| %>
+              <li class="liactive"><%= link_to category.name, jobs_path(category: category.name) %></li>
+              <% end %>
 
 
-		  			</ul>	
-		  		</div>	
-			</div>
-		</div>
-	
+            </ul>  
+          </div>  
+      </div>
+    </div>
+  

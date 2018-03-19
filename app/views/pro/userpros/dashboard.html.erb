@@ -10,13 +10,13 @@ body, html {
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-	
+  
 .joblabel{
    
 }
 
 .bordlabel{
-	font-family: 'Open Sans Condensed', arial, sans;
+  font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;
     padding: 30px;
     background: #FFFFFF;
@@ -30,7 +30,7 @@ body, html {
 
 .poster{
 
-	  align-self:center;
+    align-self:center;
       background:transparent;
       padding:1rem 1rem;
       margin:0 1rem;
@@ -48,7 +48,7 @@ body, html {
 
 .counterr{
 
-	 align-self:center;
+   align-self:center;
       background:transparent;
       padding:1rem 1rem;
       margin:0 auto;
@@ -67,47 +67,47 @@ body, html {
 
 <div class="container">
 
-	<div class="row">
-	
-					<% if userpro_signed_in? %>
+  <div class="row">
+  
+          <% if userpro_signed_in? %>
 
 
 
-						<ul>
-							<ol><h3><%= link_to "Poster une offre", new_pro_job_path, :class => 'poster' %> </h3></ol>
-							
-							
-						</ul>
+            <ul>
+              <ol><h3><%= link_to "Poster une offre", new_pro_job_path, :class => 'poster' %> </h3></ol>
+              
+              
+            </ul>
 
 <div class="joblabel">
-					<div class="w3-content w3-container w3-padding-64" id="about">
-						<h4 class="counterr">Vos missions en cours: <%=current_userpro.jobs.count %></h4>
-						<% current_userpro.jobs.each do |job| %>
-						<div class="bordlabel">
-							<h4><%= job.title %></h4>
-							<p><%= job.description %></p>
+          <div class="w3-content w3-container w3-padding-64" id="about">
+            <h4 class="counterr">Vos missions en cours: <%=current_userpro.jobs.count %></h4>
+            <% current_userpro.jobs.each do |job| %>
+            <div class="bordlabel">
+              <h4><%= job.title %></h4>
+              <p><%= job.description %></p>
 
-							<% if !job.users.empty? %>
-								<div>	
-									<h4>Les extras suivants on postulé :</h4>
-										<ul>
-											<li>
-												<% job.users.each do |user| %>
-													<%=  user.email %>
-												<% end %>
-											</li>
-										</ul>	
-								</div>
-							<% else %>
-								<h4>Aucun extra n'a postulé pour le moment.</h4>
-							<% end %>
-						</div> 
-							
-					<% end %>
-					<% end %>
+              <% if !job.users.empty? %>
+                <div>  
+                  <h4>Les extras suivants on postulé :</h4>
+                    <ul>
+                      <li>
+                        <% job.users.each do |user| %>
+                          <%=  user.email %>
+                        <% end %>
+                      </li>
+                    </ul>  
+                </div>
+              <% else %>
+                <h4>Aucun extra n'a postulé pour le moment.</h4>
+              <% end %>
+            </div> 
+              
+          <% end %>
+          <% end %>
 
 
-						
-					</div>
-	</div>
+            
+          </div>
+  </div>
 </div>

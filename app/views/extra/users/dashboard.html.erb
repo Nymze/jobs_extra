@@ -12,13 +12,13 @@ body, html {
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-	
+  
 .joblabel{
    
 }
 
 .bordlabel{
-	font-family: 'Open Sans Condensed', arial, sans;
+  font-family: 'Open Sans Condensed', arial, sans;
     width: 800px;
     padding: 30px;
     background: #FFFFFF;
@@ -33,7 +33,7 @@ body, html {
 
 .poster{
 
-	  align-self:center;
+    align-self:center;
       background:transparent;
       padding:1rem 1rem;
       margin:0 1rem;
@@ -51,7 +51,7 @@ body, html {
 
 .counterr{
 
-	 align-self:center;
+   align-self:center;
       background:transparent;
       padding:1rem 1rem;
       margin:0 1rem;
@@ -75,41 +75,41 @@ body, html {
 <%= render 'jobs/categories'%>
 
 <div class="container">
-	<div class="row">
-		<div class="joblabel">
+  <div class="row">
+    <div class="joblabel">
 
-			<% @jobs.each do |job| %>
-			<div class="bordlabel">
-						<h2><b><%= job.title %></b></h2>
-						<br>
-						
-						<%= job.description %>
-						<br>
+      <% @jobs.each do |job| %>
+      <div class="bordlabel">
+            <h2><b><%= job.title %></b></h2>
+            <br>
+            
+            <%= job.description %>
+            <br>
 
-						Experience requise : <%= job.experience %> ans
-						<br>
+            Experience requise : <%= job.experience %> ans
+            <br>
 
-						Pour le : <%= job.date %> 
-						<br>
+            Pour le : <%= job.date %> 
+            <br>
 
-						<h4><%= link_to "Voir l'offre", extra_jobs_path(@job) %> </h4>
-						<br>
-						
-						Offre proposée par : <%= job.userpro %>
-						<br>
+            <h4><%= link_to "Voir l'offre", extra_jobs_path(@job) %> </h4>
+            <br>
+            
+            Offre proposée par : <%= job.userpro %>
+            <br>
 
-						<% if !current_user.jobs.include?(job) %>
-							<%= link_to "postuler", apply_extra_job_path(job), method: :post %> 
-						<% else %>
-							<b> Vous avez postulé :) </b>
-							<br>
-							<%= link_to "annuler", cancel_candidacy_extra_job_path(job), method: :post %> 
-						<% end %>
-						<br>
-						<br>
-				</div>
-			<% end %>
-		</div>
-	</div>
+            <% if !current_user.jobs.include?(job) %>
+              <%= link_to "postuler", apply_extra_job_path(job), method: :post %> 
+            <% else %>
+              <b> Vous avez postulé :) </b>
+              <br>
+              <%= link_to "annuler", cancel_candidacy_extra_job_path(job), method: :post %> 
+            <% end %>
+            <br>
+            <br>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 </div>
