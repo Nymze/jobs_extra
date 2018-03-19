@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get '/tableau-de-bord-extra', to: 'users#dashboard', as: :user_dashboard
     resources :jobs, only: [:index, :show] do 
       post :apply, on: :member
+      post :cancel_candidacy, on: :member
     end
  end
 

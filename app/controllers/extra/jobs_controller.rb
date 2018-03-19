@@ -19,13 +19,13 @@ module Extra
 	end
 
     def apply
-    	success, result = Services::Extra::Apply.new(current_user, job).call
+    	success, result = Services::Extra::Apply.new(current_user, @job).call
 
     	redirect_to extra_user_dashboard_path
     end
     	
     def cancel_candidacy
-    	job.destroy
+    	@job.destroy
     	redirect_to extra_user_dashboard_path
     end
 

@@ -99,11 +99,11 @@ body, html {
 						<br>
 
 						<% if !current_user.jobs.include?(job) %>
-							<%= link_to "postuler", apply_extra_job_path(job_id: job.id), method: :post %> 
+							<%= link_to "postuler", apply_extra_job_path(job), method: :post %> 
 						<% else %>
 							<b> Vous avez postulé :) </b>
 							<br>
-							<%= link_to "annuler", apply_extra_job_path(job_id: job.id), method: :destroy %> 
+							<%= link_to "annuler", cancel_candidacy_extra_job_path(job), method: :post %> 
 						<% end %>
 						<br>
 						<br>
