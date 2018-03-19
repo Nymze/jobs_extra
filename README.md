@@ -8,9 +8,9 @@
   
 **JEUDI - VENDREDI**<br/>
   - Envoyer un mail/sms au PRO quand nouvelle candidature
-  - Envoyer un mail/sms à l'Extra quand candidature acceptée
-  <br/>
-**TOUS LES JOURS:**
+  - Envoyer un mail/sms à l'Extra quand candidature acceptée<br/>
+
+**TOUS LES JOURS:**<br/>
 Un peu de Css
   
   ---
