@@ -1,0 +1,17 @@
+
+<div class="container">
+	<div class="row">
+		<ul>
+			<ol><h1><%= @job.title %></h1></ol>
+			<ol><p><%= @job.description%></p></ol>
+			<ol><p> Experience :</p><h4><%= @job.experience %></h4></ol>
+			<ol><%= @job.date %></ol> </br>
+			<ol><%= link_to "Accueuil", pro_userpro_dashboard_path %></ol>
+			<ol><%= link_to "Editer", edit_pro_job_path(@job) %></ol>
+			<ol><%= link_to "Supprimer",  pro_job_path(@job), method: :delete, data: {confirm: "T'es sur ?"} %></ol>
+		</ul>
+
+		
+	</div>
+</div>
+

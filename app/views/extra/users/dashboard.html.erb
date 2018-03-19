@@ -92,18 +92,18 @@ body, html {
 						Pour le : <%= job.date %> 
 						<br>
 
-						<h4><%= link_to "Voir l'offre", job %> </h4>
+						<h4><%= link_to "Voir l'offre", extra_jobs_path(@job) %> </h4>
 						<br>
 						
 						Offre proposée par : <%= job.userpro %>
 						<br>
 
 						<% if !current_user.jobs.include?(job) %>
-							<%= link_to "postuler", apply_for_job_path(job_id: job.id), method: :post %> 
+							<%= link_to "postuler", apply_extra_job_path(job_id: job.id), method: :post %> 
 						<% else %>
 							<b> Vous avez postulé :) </b>
 							<br>
-							<%= link_to "annuler", cancel_job_candidacy_path(job_id: job.id) %> 
+							<%= link_to "annuler", apply_extra_job_path(job_id: job.id), method: :destroy %> 
 						<% end %>
 						<br>
 						<br>

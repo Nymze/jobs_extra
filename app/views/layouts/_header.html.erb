@@ -48,7 +48,7 @@ body {
       <% if user_signed_in? %>
 
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a><%= link_to 'Dashboard', user_dashboard_path %></a>
+      <a><%= link_to 'Dashboard', extra_user_dashboard_path %></a>
       <a><%= link_to 'Edit profile', edit_user_registration_path %></a>
       <a><%= link_to "Logout", destroy_user_session_path, method: :delete  %></a>
       
@@ -56,7 +56,7 @@ body {
       <% elsif userpro_signed_in? %>
 
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a><%= link_to 'Dashboard', userpro_dashboard_path %></a>
+      <a><%= link_to 'Dashboard',  pro_userpro_dashboard_path %></a>
       <a ><%= link_to 'Edit profile', edit_userpro_registration_path %></a>
       <a ><%= link_to "Logout", destroy_userpro_session_path, method: :delete %></a>
       
