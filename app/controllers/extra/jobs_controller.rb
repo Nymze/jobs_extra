@@ -12,10 +12,11 @@ module Extra
       @category_id = Category.find_by(name: params[:category]).id
       @jobs = scope.where(category_id: @category_id).order("created_at DESC")
     end
-    @jobs = @jobs.page().per(20)
+   
   end
 
   def show
+    @job = scope.find(params[:id])
   end
 
     def apply
