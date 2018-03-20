@@ -68,46 +68,48 @@ body, html {
 <div class="container">
 
   <div class="row">
-  
-          <% if userpro_signed_in? %>
+    <% if userpro_signed_in? %>
+      <ul>
+        <ol><h3><%= link_to "Poster une offre", new_pro_job_path, :class => 'poster' %> </h3></ol>
+      </ul>
 
+  <div class="joblabel">
 
+    <div class="w3-content w3-container w3-padding-64" id="about">
 
-            <ul>
-              <ol><h3><%= link_to "Poster une offre", new_pro_job_path, :class => 'poster' %> </h3></ol>
-              
-              
-            </ul>
+      <h4 class="counterr">Vos missions en cours: <%=current_userpro.jobs.count %></h4>
 
-<div class="joblabel">
-          <div class="w3-content w3-container w3-padding-64" id="about">
-            <h4 class="counterr">Vos missions en cours: <%=current_userpro.jobs.count %></h4>
-            <% current_userpro.jobs.each do |job| %>
-            <div class="bordlabel">
-              <h4><%= job.title %></h4>
-              <p><%= job.description %></p>
+        <% current_userpro.jobs.each do |job| %>
+
+          <div class="bordlabel">
+
+            <h4><%= job.title %></h4>
+
+            <p><%= job.description %></p>
 
               <% if !job.users.empty? %>
                 <div>  
                   <h4>Les extras suivants on postulé :</h4>
                     <ul>
-                      <li>
-                        <% job.users.each do |user| %>
+                      <% job.users.each do |user| %>
+                        <li>
                           <%=  user.email %>
-                        <% end %>
-                      </li>
+                        </li>
+                      <% end %>
                     </ul>  
                 </div>
               <% else %>
                 <h4>Aucun extra n'a postulé pour le moment.</h4>
               <% end %>
-            </div> 
+
+          </div> 
               
-          <% end %>
-          <% end %>
+        <% end %>
+
+      <% end %>
 
 
             
-          </div>
+    </div>
   </div>
 </div>
