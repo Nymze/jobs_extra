@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
 
-  devise_for :users
-
+  devise_for :users 
   namespace :extra do
     get '/tableau-de-bord-extra', to: 'users#dashboard', as: :user_dashboard
     get '/jobs', to: 'jobs#show', as: :users_show
