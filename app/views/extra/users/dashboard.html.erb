@@ -95,7 +95,7 @@ body, html {
             <h4><%= link_to "Voir l'offre", extra_jobs_path(@job) %> </h4>
             <br>
             
-            Offre proposée par : <%= job.userpro %>
+            Offre proposée par : <%= job.userpro.email %>
             <br>
 
             <% if !current_user.jobs.include?(job) %>
