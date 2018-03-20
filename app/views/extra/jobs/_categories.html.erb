@@ -57,7 +57,7 @@
            <ul class="topcategories" style="margin-left:20%"> 
               <li class="liactive"> <%= link_to "Toutes les offres",  extra_user_dashboard_path %></li>
                 <% Category.all.each do |category| %>
-              <li class="liactive"><%= link_to category.name, jobs_path(category: category.name) %></li>
+              <li class="liactive"><%= link_to category.name, extra_jobs_path(category: category.name) %></li>
               <% end %>
 
 
