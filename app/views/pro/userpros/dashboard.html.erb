@@ -28,6 +28,12 @@ body, html {
 
 }
 
+.applicants{
+
+
+
+}
+
 .poster{
 
     align-self:center;
@@ -40,9 +46,11 @@ body, html {
       letter-spacing:1px;
       outline:none;
       box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
-      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-      border:solid 2px #41403E;
+      border-radius: 1px;
+      
       text-decoration: none;
+      width: 5%;
+
 
 }
 
@@ -62,6 +70,12 @@ body, html {
 
 }
 
+.postnew{
+
+font-size: 200%;
+color: black;
+
+}
 
 </style>
 
@@ -70,7 +84,8 @@ body, html {
   <div class="row">
     <% if userpro_signed_in? %>
       <ul>
-        <ol><h3><%= link_to "Poster une offre", new_pro_job_path, :class => 'poster' %> </h3></ol>
+
+        <ol class="postnew"><%= link_to "+", new_pro_job_path, class: "w3-button w3-xlarge w3-circle w3-white poster" %> Poster une offre</ol>
       </ul>
 
   <div class="joblabel">
@@ -89,14 +104,12 @@ body, html {
 
               <% if !job.users.empty? %>
                 <div>  
-                  <h4><%= job.users.count%> Extras ont postulé :</h4>
+                  <h4>Il y a <%= job.users.count%> candidats</h4>
                     <ul>
                       <% job.users.each do |user| %>
-                        <li>
-                          <%=  user.email%>
-                          
-                          <%= link_to "voir tout les extras", pro_userpro_extra_path %>
-                        </li>
+                        
+                         <%= link_to "voir les Candidats", pro_userpro_extra_path, class: "w3-btn w3-black" %>
+                        
                       <% end %>
                     </ul>  
                 </div>

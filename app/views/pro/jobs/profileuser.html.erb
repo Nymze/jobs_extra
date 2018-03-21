@@ -5,6 +5,7 @@
 
 <% current_userpro.jobs.each do |job| %>
 
+<% if !job.users.empty? %>
 
          <h2 class="maintitle">Post it Extra</h2>
          <h1 style="text-align: center;"><%= job.title %></h1>
@@ -30,6 +31,7 @@
     <%end%>
   <%end%>
 <% end %>
+<%end%>
     
     </div>
 </div>
