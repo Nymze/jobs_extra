@@ -1,0 +1,111 @@
+
+
+<div class="full">
+
+
+<% current_userpro.jobs.each do |job| %>
+
+
+         <h2 class="maintitle">Post it Extra</h2>
+         <h1 style="text-align: center;"><%= job.title %></h1>
+
+  <% if !job.users.empty? %>
+
+    <% job.users.each do |user| %>
+
+     
+      <div class="card">
+
+         <%= image_tag("coffeebean.jpeg", :alt => "rss feed", class: "card") %>
+        <h1 class="title"><%= user.first_name %></h1>
+        <p><%= user.last_name %></p>
+        <h4><%= user.address %></h4>
+        <h4><%= user.city%></h4>
+        <h4><%= user.phone %></h4>
+       <p><button><%= mail_to user.email, "Contacter" %></button></p>
+
+        </div>
+        <br>
+
+    <%end%>
+  <%end%>
+<% end %>
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+
+body{
+
+background: linear-gradient(to right, #74ebd5, #acb6e5);
+
+
+}
+
+.full{
+background: white;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+width: 70%;
+margin: auto;
+
+}
+
+.maintitle{
+
+text-align:center;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background: white;
+  width: 500px;
+
+}
+
+.title {
+  color: grey;
+  
+}
+
+
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>

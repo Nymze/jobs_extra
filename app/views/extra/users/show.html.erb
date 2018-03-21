@@ -1,0 +1,104 @@
+
+<div class="container">
+  <div class="row">
+
+<% if  user_signed_in? %>
+
+  <h2 style="text-align:center">Post it Extra</h2>
+
+  <div class="card">
+      <%= image_tag("coffeebean.jpeg", :alt => "rss feed", class: "card") %>
+    <h1><%= @user.first_name %></h1>
+    <h2><%= @user.last_name %></h2>
+    <h2><%= @user.address %></h2>
+    <h2><%= @user.phone %></h2>
+    <h2><%= @user.city %></h2>
+    <p class="title"><%= @user.email %></p>
+    
+    <div style="margin: 24px 0;">
+      
+   </div>
+
+   <h3> J'ai postulé à: </h3>
+ </p><%= @user.jobs.count %> Offres </p>
+
+   <%@user.jobs.each do |candidacie| %>
+
+   <%= candidacie.title %>
+   <h3> Par </h3>
+   <%= candidacie.userpro.email %>
+   <%end%>
+
+
+
+<% elsif userpro_signed_in? %>
+ <h2 style="text-align:center">Post it Extra</h2>
+
+  <div class="card">
+      <%= image_tag("coffeebean.jpeg", :alt => "rss feed", class: "card") %>
+    <h1><%= @user.first_name %></h1>
+    <h2><%= @user.last_name %></h2>
+    <h4><%= @user.address %></h4>
+    <h4><%= @user.phone %></h4>
+    <h2><%= @user.city %></h2>
+    <p class="title"><%= @user.email %></p>
+    
+    <div style="margin: 24px 0;">
+      
+   </div>
+
+   <p><button><%= mail_to @user.email, "Contacter" %></button></p>
+  </div>
+
+   
+
+
+<%end%>
+
+ </div>
+  </div>
+<style>
+
+body{
+
+background: linear-gradient(to right, #74ebd5, #acb6e5);
+
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background: white;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+

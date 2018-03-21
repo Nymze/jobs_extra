@@ -89,11 +89,13 @@ body, html {
 
               <% if !job.users.empty? %>
                 <div>  
-                  <h4>Les extras suivants on postulé :</h4>
+                  <h4><%= job.users.count%> Extras ont postulé :</h4>
                     <ul>
                       <% job.users.each do |user| %>
                         <li>
-                          <%=  user.email %>
+                          <%=  user.email%>
+                          
+                          <%= link_to "voir tout les extras", pro_userpro_extra_path %>
                         </li>
                       <% end %>
                     </ul>  

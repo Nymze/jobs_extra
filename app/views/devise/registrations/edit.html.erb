@@ -1,8 +1,12 @@
+
+<div class="container">
+     <div class="w3-col m8 w3-container paperplane">
+        <div class="w3-col m8 w3-container" style="margin: auto">
 <% if  user_signed_in? %>
 
-<h1> HAAAA </h1>
+<h1> Profile extra </h1>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editer <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -17,14 +21,21 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= f.input :first_name, required: true %>
+    <%= f.input :last_name, required: true %>
+    <%= f.input :phone, required: true %>
+    <%= f.input :address, required: true %>
+    <%= f.input :city, required: true %>
 
-    <%= f.input :first_name %>
+
+   
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "w3-button w3-black w3-right w3-section" %>
   </div>
+ 
 <% end %>
 
 <h3>Cancel my account</h3>
@@ -32,9 +43,9 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+   
 
-
- <% else userpro_signed_in? %>
+ <% elsif userpro_signed_in? %>
 
 
 <h1> Hoooo </h1>
@@ -54,12 +65,20 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= f.input :name, required: true %>
+    <%= f.input :phone, required: true %>
+    <%= f.input :address, required: true %>
+    <%= f.input :city, required: true %>
+
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "w3-button w3-black w3-right w3-section" %>
   </div>
+
 <% end %>
+
 
 <h3>Cancel my account</h3>
 
@@ -67,6 +86,40 @@
 
 <%= link_to "Back", :back %>
 
-
+  
  <% end%> 
 
+  </div>
+  </div>
+</div> 
+
+
+<style>
+  
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+  body, html {
+    height: 100%;
+    width: 100%;
+    color: #777;
+    line-height: 1.8;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+
+
+}
+
+.paperplane{
+
+    margin-top:10%; 
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 500px;
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+
+
+
+
+</style>
