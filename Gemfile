@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # authentification
 #gem 'devise'
@@ -15,6 +16,7 @@ gem 'jbuilder'
 gem 'simple_form', '~> 3.5', '>= 3.5.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise'
+gem 'gmaps4rails'
 
 
 group :development, :test do
