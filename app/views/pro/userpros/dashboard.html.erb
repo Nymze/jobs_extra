@@ -80,40 +80,32 @@ color: black;
 </style>
 
 <div class="container">
-
   <div class="row">
     <% if userpro_signed_in? %>
+      
       <ul>
-
         <ol class="postnew"><%= link_to "+", new_pro_job_path, class: "w3-button w3-xlarge w3-circle w3-white poster" %> Poster une offre</ol>
       </ul>
 
   <div class="joblabel">
-
     <div class="w3-content w3-container w3-padding-64" id="about">
-
       <h4 class="counterr">Vos missions en cours: <%=current_userpro.jobs.count %></h4>
-
         <% current_userpro.jobs.each do |job| %>
-
           <div class="bordlabel">
-
             <h4><%= job.title %></h4>
-
             <p><%= job.description %></p>
-
               <% if !job.users.empty? %>
                 <div>  
+                  <br>
                   <h4>Il y a <%= job.users.count%> candidats</h4>
                     <ul>
                       <% job.users.each do |user| %>
-                        
                          <%= link_to "voir les Candidats", pro_userpro_extra_path, class: "w3-btn w3-black" %>
-                        
                       <% end %>
                     </ul>  
                 </div>
               <% else %>
+              <br>
                 <h4>Aucun extra n'a postulé pour le moment.</h4>
               <% end %>
 

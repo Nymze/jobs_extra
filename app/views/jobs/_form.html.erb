@@ -9,7 +9,7 @@
 
 <%= f.input :title, label: "Titre", input_html: { class: "w3-input w3-border" } %>
 <%= f.input :description, label: "description", input_html: { class: "w3-input w3-border" } %>
-<%= f.input :experience, label: "experience", input_html: { class: "w3-input w3-border" } %>
+<%= f.input :experience, label: "Nombre d'extras :", input_html: { class: "w3-input w3-border" } %>
 <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Selectionner une categorie"}, input_html: { class: "w3-input w3-border" } %>
 <%= f.input :date, label: "date", input_html: { class: "w3-input w3-border" } %>
 <%= f.hidden_field :userpro_id, :value => current_userpro.id %>

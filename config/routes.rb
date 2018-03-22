@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :pro do
     get '/tableau-de-bord-restaurateur', to: 'userpros#dashboard', as: :userpro_dashboard
     get '/profile-extra', to: 'jobs#profileuser', as: :userpro_extra
+    get '/jobs', to: 'jobs#show', as: :userpro_job
     
     resources :jobs
   end
