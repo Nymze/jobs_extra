@@ -15,6 +15,7 @@ gem 'jbuilder'
 gem 'simple_form', '~> 3.5', '>= 3.5.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise'
+gem 'gmaps4rails'
 
 
 group :development, :test do
@@ -26,6 +27,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem "factory_bot_rails"
   gem 'simplecov'
+  gem 'dotenv-rails'
 end
 
 group :development do

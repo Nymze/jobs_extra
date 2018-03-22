@@ -110,15 +110,19 @@ body, html {
           <br>
           <br>
           <br>
-          <h2 style="text-align:center; color: white;">Scroll pour voire notre offre</h2>
+          <h2 style="text-align:center; color: white;">Nicextra</h2>
       </div>
     </div>
 
     <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">Ce que nous proposons</h3>
-  <p class="w3-center"><em>Un service de qualité</em></p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin hendrerit urna quis nisl vestibulum, quis rhoncus nulla vestibulum. Morbi mollis porttitor nulla quis dapibus. Aliquam pulvinar odio dolor, consectetur euismod est scelerisque id. Morbi varius eleifend enim, vitae facilisis eros interdum vel. Suspendisse augue magna, lobortis quis dignissim egestas, imperdiet eget odio. Fusce elementum, leo rhoncus consequat dictum, mi justo blandit diam, varius gravida leo odio et arcu. Pellentesque vel dolor pretium, maximus nibh ut, condimentum nunc. Maecenas vitae posuere felis, a tempor leo. Nam volutpat sem ut porta mattis. Quisque eget lorem a neque eleifend vestibulum eget sed velit. Nulla finibus orci in turpis eleifend pellentesque finibus quis diam. Aenean mollis, lorem vitae cursus dictum, augue ipsum pellentesque nulla, eu tempus sapien enim nec tortor.</p>
+  <p class="w3-center"><em>Un service de qualité clefs en main</em></p>
+  <p>Que vous cherchiez du travail ou que vous en proposiez, Nicextra vous permet de répondre à vos attentes rapidement et sans efforts.<br/>
+    <br/>
+    <strong>Vous cherchez du travail?</strong> Inscrivez vous et accéder dès à présent aux offres disponibles proches de chez vous, gratuitement ! Il vous suffit ensuite de postuler aux missions qui vous intéressent, qui vous correspondent. Vous gérez donc votre emploi du temps comme bon vous semble. <br/>
+    <br/>
+    <strong>Vous cherchez des travailleurs motivés et compétent?</strong> Faites confiance à notre expertise pour vous proposer les profils qui correspondent à ce que vous cherchez. Plus besoin de gérer les fiches de paie et perdre du temps à l'embauche, nous faisons tout cela pour vous ! </p>
   
     
 
@@ -130,13 +134,13 @@ body, html {
   <div class="w3-light-grey">
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:98%">98%</div>
   </div>
-  <p class="w3-wide"><i class="fa"></i>pourcentage quelconque</p>
+  <p class="w3-wide"><i class="fa"></i>Part des candidats acceptés</p>
   <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">80%</div>
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:88%">85%</div>
   </div>
-  <p class="w3-wide"><i class="fa"></i>Deuxieme pourcentage qui fait vendre</p>
+  <p class="w3-wide"><i class="fa"></i>Economies réalisées à l'emploi</p>
   <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">85%</div>
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:82%">80%</div>
   </div>
 </div>
 
@@ -160,21 +164,24 @@ body, html {
 </div>
 
 <!-- Second Parallax Image with Portfolio Text -->
+<!--
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide">UNE PROMESSE UNIQUE</span>
   </div>
 </div>
-
+-->
 
 <!-- ======== JUSQUE ICI ========== -->
 
 <!-- Container (Portfolio Section) -->
+<!--
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
   <h3 class="w3-center">Nos Evenements</h3>
   <p class="w3-center"><em>Galleries.<br> Nos events</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+<!--
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
       <img src="coffeebean.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
@@ -267,10 +274,10 @@ body, html {
 <script>
 function myMap()
 {
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  myCenter=new google.maps.LatLng(43.701422, 7.279259);
   var mapOptions= {
     center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
+    zoom:15, scrollwheel: false, draggable: false,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
@@ -288,7 +295,7 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-
+/*
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
@@ -299,6 +306,7 @@ function myFunction() {
         navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
     }
 }
+*/
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
@@ -310,7 +318,7 @@ function toggleFunction() {
     }
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9bPPdcdWDnBtzYK06IdVV6IAfOn3s0Ng&callback=myMap"></script>
 
 
 
