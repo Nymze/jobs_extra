@@ -47,8 +47,6 @@ body, html {
 
 
 
-
-
         <% if user_signed_in? %>
 <div class="container" style="height:100%; width: 100%;">
         
@@ -318,11 +316,13 @@ function toggleFunction() {
     }
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9bPPdcdWDnBtzYK06IdVV6IAfOn3s0Ng&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['SECRET_KEY']%>&callback=myMap"></script>
 
 
 
 <% end %>
+
+
 
 
 
