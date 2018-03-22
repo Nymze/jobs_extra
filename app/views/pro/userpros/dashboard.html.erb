@@ -1,3 +1,39 @@
+<div class="container">
+  <div class="row">
+    <% if userpro_signed_in? %>
+      
+      <ul>
+        <ol class="postnew"><%= link_to "+", new_pro_job_path, class: "w3-button w3-xlarge w3-circle w3-white posterpro" %> Poster une offre</ol>
+      </ul>
+
+      <div class="joblabel">
+        <div class="w3-content w3-container w3-padding-64" id="about">
+          <h4 class="counterrpro">Vos missions en cours: <%=current_userpro.jobs.count %></h4>
+            <% current_userpro.jobs.each do |job| %>
+            <div class="boardlabelpro">
+                <h4><%= job.title %></h4>
+                <p><%= job.description %></p>
+                  <% if !job.users.empty? %>
+                <div>  
+                      <br>
+                      <h4>Il y a <%= job.users.count%> candidats</h4>
+                        
+                    </div>
+                  <% else %>
+                  <br>
+                    <h4>Aucun extra n'a postulé pour le moment.</h4>
+                  <% end %>
+                <%= link_to "voir les Candidats", pro_userpro_extra_path, class: "w3-btn w3-black" %>
+              </div> 
+            <% end %>
+          <% end %>
+
+
+                
+        </div>
+      </div>
+    </div>
+
 <style>
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
@@ -8,115 +44,5 @@ body, html {
     background: linear-gradient(to right, #74ebd5, #acb6e5);
 }
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-  
-.joblabel{
-   
-}
-
-.bordlabel{
-  font-family: 'Open Sans Condensed', arial, sans;
-    width: 500px;
-    padding: 30px;
-    background: #FFFFFF;
-    margin: 50px auto;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
-
-
-}
-
-.applicants{
-
-
-
-}
-
-.poster{
-
-    align-self:center;
-      background:transparent;
-      padding:1rem 1rem;
-      margin:0 1rem;
-      transition:all .5s ease;
-      color:#41403E;
-      font-size:2rem;
-      letter-spacing:1px;
-      outline:none;
-      box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
-      border-radius: 1px;
-      
-      text-decoration: none;
-      width: 5%;
-
-
-}
-
-.counterr{
-
-   align-self:center;
-      background:transparent;
-      padding:1rem 1rem;
-      margin:0 auto;
-      margin-left: 25%;
-      transition:all .5s ease;
-      color:#41403E;
-      font-size:2rem;
-      letter-spacing:1px;
-      outline:none;
-      text-decoration:none; 
-
-}
-
-.postnew{
-
-font-size: 200%;
-color: black;
-
-}
 
 </style>
-
-<div class="container">
-  <div class="row">
-    <% if userpro_signed_in? %>
-      
-      <ul>
-        <ol class="postnew"><%= link_to "+", new_pro_job_path, class: "w3-button w3-xlarge w3-circle w3-white poster" %> Poster une offre</ol>
-      </ul>
-
-  <div class="joblabel">
-    <div class="w3-content w3-container w3-padding-64" id="about">
-      <h4 class="counterr">Vos missions en cours: <%=current_userpro.jobs.count %></h4>
-        <% current_userpro.jobs.each do |job| %>
-          <div class="bordlabel">
-            <h4><%= job.title %></h4>
-            <p><%= job.description %></p>
-              <% if !job.users.empty? %>
-                <div>  
-                  <br>
-                  <h4>Il y a <%= job.users.count%> candidats</h4>
-                    <ul>
-                      <% job.users.each do |user| %>
-                         <%= link_to "voir les Candidats", pro_userpro_extra_path, class: "w3-btn w3-black" %>
-                      <% end %>
-                    </ul>  
-                </div>
-              <% else %>
-              <br>
-                <h4>Aucun extra n'a postulé pour le moment.</h4>
-              <% end %>
-
-          </div> 
-              
-        <% end %>
-
-      <% end %>
-
-
-            
-    </div>
-  </div>
-</div>
