@@ -47,15 +47,13 @@ module Pro
       redirect_to root_path
     end
 
-<<<<<<< HEAD
+
     def validate
       success, result = Services::Pro::Validate.new(current_userpro, @job, @user).call
 
       redirect_to pro_userpro_dashboard_path
     end
 
-=======
->>>>>>> master
 
     private
 
